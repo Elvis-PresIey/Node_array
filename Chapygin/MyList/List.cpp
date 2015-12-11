@@ -18,6 +18,7 @@ int List::GetFreeNode() {
 
  List::List(int s) {
 	 if (s <= 0) throw std::exception("INVALID SIZE");
+	 size = s;
 	 data = (double*)malloc(sizeof(double) * (s + 2));
 	 index = (int*)malloc(sizeof(int) * (s + 2));
 	 prev = curr = index[0] = 0;

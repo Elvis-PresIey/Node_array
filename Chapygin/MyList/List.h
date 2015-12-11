@@ -1,3 +1,5 @@
+#pragma once
+
 #include <stdio.h>
 #include <exception>
 
@@ -7,6 +9,7 @@ private:
 	int* index;
 	int curr;
 	int prev;
+	int size;
 
 	int GetFreeNode();
 	void AddFreeNode(int pos);
@@ -18,6 +21,8 @@ public:
 
 	bool isEmpty() const { return !index[0]?true:false; }
 	bool isFull() const { return (index[1] == 1)?true:false; }
+	bool EOL() const { return (!index[curr])?true:false; }
+	int GetSize() const { return size; }
 
 	void MoveNext();
 	void Rewind() {	prev = 0; curr = index[0]; }

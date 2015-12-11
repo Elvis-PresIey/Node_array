@@ -1,4 +1,5 @@
 #include "List.h"
+#include "Functions.h"
 #include <gtest.h>
 
 TEST(List, can_create_and_fill_list) {
@@ -47,4 +48,22 @@ TEST(List, list_knows_hes_full) {
 TEST(List, list_knows_hes_empty) {
 	List myList(3);
 	EXPECT_TRUE(myList.isEmpty());
+}
+
+TEST(merge, able_to_merge) {
+	List myList1(5), myList2(3);
+	myList1.Add(10.0); myList1.MoveNext();
+	myList1.Add(15.1); myList1.MoveNext();
+	myList1.Add(16.8); myList1.MoveNext();
+	myList1.Add(152.3); myList1.MoveNext();
+	myList1.Add(164.2); myList1.MoveNext();
+	myList1.Rewind();
+
+	myList2.Add(2.4); myList2.MoveNext();
+	myList2.Add(23.7); myList2.MoveNext();
+	myList2.Add(215.7); myList2.MoveNext();
+	myList2.Rewind();
+
+	(Merge(myList1, myList2)).PrintList();
+
 }
